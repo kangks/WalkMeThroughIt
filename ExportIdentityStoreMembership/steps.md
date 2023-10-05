@@ -1,8 +1,22 @@
 # Export AWS Identity Center users by group
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [Export AWS Identity Center users by group](#export-aws-identity-center-users-by-group)
+  - [Overview](#overview)
+  - [Identity IAM Identity Store ID](#identity-iam-identity-store-id)
+  - [Export groups and memberships from current AWS Organization](#export-groups-and-memberships-from-current-aws-organization)
+  - [Create users and groups in new AWS Organization](#create-users-and-groups-in-new-aws-organization)
+
+<!-- /code_chunk_output -->
+
+
 ## Overview
 To use AWS CLI identitystore command (https://awscli.amazonaws.com/v2/documentation/api/latest/reference/identitystore/index.html#cli-aws-identitystore) to export users from AWS Identity Center
 
-## Identity IAM Identity Store
+## Identity IAM Identity Store ID
 Step 1: Login to the AWS Identity Center https://console.aws.amazon.com/singlesignon/home
 
 Step 2: Identify the identity store ID from AWS Identity Center
@@ -11,7 +25,7 @@ Step 2: Identify the identity store ID from AWS Identity Center
 Step 3: In AWS console, open up a CloudShell
 ![CloudShell](images/CloudShell.png)
 
-### Export existing groups and memberships
+## Export groups and memberships from current AWS Organization
 
 Step 1: Get all users with command [list-users](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/identitystore/list-users.html)
 
@@ -77,7 +91,7 @@ $ aws identitystore describe-group --identity-store-id d-9667681fac  --group-id 
 "Developer group 1"
 ```
 
-### Create users and groups in new AWS Organization
+## Create users and groups in new AWS Organization
 
 Identity the Identity Store in the new AWS Organzation from steps described in [Identity IAM Identity Store](#identity-iam-identity-store)
 
